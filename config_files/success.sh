@@ -1,0 +1,1 @@
+tail --follow=name /mnt/STORJ01/storjlogs/*.log | cut -c 1-150 | awk '/^==> / {a=substr($0, 29, 40); next} {print a":"$0}' | grep -i "offer\|contract\|renter\|download\|upload\|negotiator\|space\|consignment\|shard\|mirrored\|retrieve\|alloc"
